@@ -1,0 +1,14 @@
+nav {
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: blue;
+}
