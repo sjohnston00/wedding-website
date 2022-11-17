@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav>
       <ul>
         <li>
-          <Link to="#">RSVP</Link>
+          <Link to="#rsvp">RSVP</Link>
         </li>
         <li>
           <Link to="#">Location</Link>
