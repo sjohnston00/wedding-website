@@ -1,3 +1,10 @@
+nav {
+  background: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 nav ul {
   display: flex;
   justify-content: end;
@@ -6,11 +13,14 @@ nav ul {
 }
 
 nav a {
-  font-size: 1.3rem;
+  color: white;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  font-size: 1.75rem;
+  letter-spacing: 0.1rem;
   padding: 0.8rem;
   display: block;
   text-decoration: none;
-  color: blue;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 900px) {
@@ -18,5 +28,6 @@ nav a {
     padding-right: 2rem;
     gap: 4rem;
     flex-direction: row;
+    justify-content: center;
   }
 }
