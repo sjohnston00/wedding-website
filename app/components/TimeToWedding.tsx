@@ -1,10 +1,12 @@
 import React from "react"
+import Navbar from "./Navbar"
 
 export default function TimeToWedding() {
   return (
     <>
       <script src="/scripts/index.js" defer></script>
       <div className="index-hero">
+        <Navbar />
         <h1 id="title">Melissa & Sam</h1>
         <span id="time-place">Thurs 16th May 2022 2:00PM | Hockwold Hall</span>
         <section id="time-to-wedding">
