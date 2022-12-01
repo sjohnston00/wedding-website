@@ -5,7 +5,7 @@ import RSVP from "~/components/RSVP"
 import TimeToWedding from "~/components/TimeToWedding"
 import indexStyles from "~/styles/index.css"
 
-type RSVP = {
+type TRSVP = {
   name: string
   email: string
   rsvp: "yes" | "no"
@@ -22,7 +22,7 @@ export const links: LinksFunction = () => [
 export const action: ActionFunction = async ({ request }) => {
   // await new Promise((res) => setTimeout(res, 400)) //artificial delay
   const formData = await request.formData()
-  const data = Object.fromEntries(formData) as RSVP
+  const data = Object.fromEntries(formData) as TRSVP
 
   const NOTION_API_KEY = process.env.NOTION_API_KEY
   const NOTION_API_ENDPOINT = "https://api.notion.com/v1"
