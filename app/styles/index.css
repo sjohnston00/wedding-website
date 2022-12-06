@@ -19,6 +19,15 @@
   background-size: cover;
 }
 
+.index-hero::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  z-index: -1;
+  background: black;
+  opacity: 0.4;
+}
+
 #title {
   text-align: center;
   margin: 0 auto;
@@ -91,28 +100,72 @@
     opacity: 1;
   }
 }
+.rsvp {
+  background-color: #6d9a84;
+  color: white;
+}
 .rsvp-form {
   max-width: 800px;
-  padding: 0 0.25rem;
+  padding: 4rem 0.25rem;
   margin: 0 auto;
 }
 
 .rsvp-form button[type="submit"] {
+  appearance: none;
   margin: 0 auto;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+  background-color: #5e8e76;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
 }
 
 .form-group,
 .form-group input {
   width: 100%;
+  border-radius: 4px;
+  appearance: none;
+  border: none;
+  box-shadow: none;
 }
 
 .form-group label,
 .form-group input {
   display: block;
 }
+.rsvp-form label {
+  margin-bottom: 0.3rem;
+}
+
+.checkboxes {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.checkbox {
+  display: inline-flex;
+  gap: 0.3rem;
+  align-items: center;
+}
 
 .faqs {
+  background-color: #5e8e76;
+  color: white;
   max-width: 800px;
   padding: 0 0.25rem;
   margin: 0 auto;
+}
+
+.itenerary {
+  background-color: #6d9a84;
+  padding: 0 0.25rem;
+  color: white;
 }
