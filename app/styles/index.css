@@ -22,7 +22,7 @@
 #title {
   text-align: center;
   margin: 0 auto;
-  font-size: 10rem;
+  font-size: clamp(5rem, 1.5rem + 8vw, 10rem);
   font-weight: 900;
   letter-spacing: -0.05ch;
 }
