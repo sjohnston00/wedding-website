@@ -159,7 +159,6 @@
 .faqs {
   background-color: #5e8e76;
   color: white;
-  max-width: 800px;
   padding: 0 0.25rem;
   margin: 0 auto;
 }
@@ -168,4 +167,9 @@
   background-color: #6d9a84;
   padding: 0 0.25rem;
   color: white;
+}
+
+.venue-map-wrapper {
+  height: 400px;
+  margin: 0 0.25rem;
 }
