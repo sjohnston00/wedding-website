@@ -4,12 +4,6 @@
   --dark-sage: #6d9a84;
   --svg-postition: -80px;
 }
-@font-face {
-  font-family: "Great Vibes";
-  font-style: normal;
-  font-weight: 400;
-  src: local(""), url("/fonts/GreatVibes-Regular.ttf") format("ttf");
-}
 
 .index-hero {
   display: flex;
@@ -60,7 +54,7 @@
 }
 
 #time-to-wedding {
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -82,11 +76,14 @@
 }
 
 .time span:first-child {
+  /* font-family: "Great Vibes", monospace; */
+  font-family: "Times New Roman", Times, serif;
   font-size: 4rem;
   font-weight: bold;
 }
 
 .time span:last-child {
+  font-family: "Times New Roman", Times, serif;
   font-size: 2.5rem;
   letter-spacing: 0.2ch;
   opacity: 0;
@@ -204,6 +201,7 @@
   font-size: clamp(60px, 100px, 150px);
   font-weight: 400;
   font-family: "Great Vibes", monospace;
+  text-align: center;
 }
 
 #save-the-date-name,
@@ -215,7 +213,7 @@
 }
 
 body {
-  overflow: hidden; /*TODO: Remove when not showing the save the date front page anymore*/
+  background-color: var(--dark-sage);
 }
 
 .bg-svg {
