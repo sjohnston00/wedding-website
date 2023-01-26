@@ -1,9 +1,8 @@
-import type { LinksFunction, ActionFunction } from "@remix-run/node";
+import type { ActionFunction } from "@remix-run/node";
 import FAQs from "~/components/FAQs";
 import Itenerary from "~/components/Itenerary";
 import RSVP from "~/components/RSVP";
 import TimeToWedding from "~/components/TimeToWedding";
-import indexStyles from "~/styles/index.css";
 
 type TRSVP = {
   name: string;
@@ -14,10 +13,6 @@ type TRSVP = {
   dessert?: "dessert-1" | "dessert-2";
   questionOrComments: string;
 };
-
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: indexStyles }
-];
 
 export const action: ActionFunction = async ({ request }) => {
   // await new Promise((res) => setTimeout(res, 400)) //artificial delay
@@ -121,29 +116,57 @@ export const action: ActionFunction = async ({ request }) => {
 export default function Index() {
   return (
     <>
-      <div id='save-the-date'>
-        <h1 id='save-the-date-title'>Save Our Date</h1>
-        <h2 id='save-the-date-name'>Melissa & Sam</h2>
-        <h2 id='save-the-date-info'>16.05.2024 | Hockwold Hall</h2>
+      <div className='min-h-screen bg-sage text-white flex flex-col justify-center items-center p-4'>
+        <h1 className='text-7xl md:text-8xl lg:text-9xl font-great-vibes text-center mb'>
+          Save Our Date
+        </h1>
+        <h2 className='font-times-new-roman text-2xl tracking-wider'>
+          Melissa & Sam
+        </h2>
+        <h2 className='font-times-new-roman text-2xl tracking-wider'>
+          16.05.2024 | Hockwold Hall
+        </h2>
       </div>
 
       <script src='/scripts/index.js' defer></script>
-      <section id='time-to-wedding'>
-        <div className='time'>
-          <span>Days</span>
-          <span id='days'>00</span>
+      <section
+        id='time-to-wedding'
+        className='flex flex-col md:flex-row justify-around text-white bg-sage gap-5 pb-10'>
+        <div className='flex flex-col items-center justify-center gap-5'>
+          <span className='font-bold text-6xl font-times-new-roman'>Days</span>
+          <span
+            id='days'
+            className='font-times-new-roman text-4xl tracking-wider transition animate-show'>
+            00
+          </span>
         </div>
-        <div className='time'>
-          <span>Hours</span>
-          <span id='hours'>00</span>
+        <div className='flex flex-col items-center justify-center gap-5'>
+          <span className='font-bold text-6xl font-times-new-roman'>Hours</span>
+          <span
+            className='font-times-new-roman text-4xl tracking-wider transition animate-show'
+            id='hours'>
+            00
+          </span>
         </div>
-        <div className='time'>
-          <span>Minutes</span>
-          <span id='minutes'>00</span>
+        <div className='flex flex-col items-center justify-center gap-5'>
+          <span className='font-bold text-6xl font-times-new-roman'>
+            Minutes
+          </span>
+          <span
+            className='font-times-new-roman text-4xl tracking-wider transition animate-show'
+            id='minutes'>
+            00
+          </span>
         </div>
-        <div className='time'>
-          <span>Seconds</span>
-          <span id='seconds'>00</span>
+        <div className='flex flex-col items-center justify-center gap-5'>
+          <span className='font-bold text-6xl font-times-new-roman'>
+            Seconds
+          </span>
+          <span
+            className='font-times-new-roman text-4xl tracking-wider transition animate-show'
+            id='seconds'>
+            00
+          </span>
         </div>
       </section>
 
