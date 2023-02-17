@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.autocomplete:focus #automcomple-box,
+.autocomplete:focus-within #automcomple-box,
+.autocomplete:focus-visible #automcomple-box {
+  display: flex;
+}
