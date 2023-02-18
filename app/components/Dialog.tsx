@@ -12,6 +12,7 @@ export default function Dialog() {
   const [guest, setGuest] = useState<Guest | undefined>(undefined)
   const emailRef = useRef<HTMLInputElement>(null)
   const isLoading = fetcher.state === 'loading'
+  const isSubmitting = fetcher.state === 'submitting'
 
   useEffect(() => {
     setTimeout(() => {
@@ -51,7 +52,7 @@ export default function Dialog() {
           <ReactDialog.Description className='mt-3 mb-5 text-black text-base '>
             Give us your email to keep up to date with all our wedding updates
           </ReactDialog.Description>
-          <fetcher.Form method='get' action='/api/guests'>
+          <fetcher.Form method='post' action='/api/guests'>
             <input
               type='hidden'
               name='_action'
@@ -89,19 +90,20 @@ export default function Dialog() {
               <div
                 id='automcomple-box'
                 className='absolute inset-0 -translate-y-full w-full z-10 h-32 bg-white hidden transition shadow-lg rounded-tl rounded-tr flex-col gap-2 overflow-y-auto p-4'>
-                {fetcher.data?.slice(0, 10).map((guest: Guest, i: number) => (
-                  <button
-                    type='button'
-                    onClick={() => {
-                      setName(guest.name)
-                      setGuest(guest)
-                      emailRef.current?.focus()
-                    }}
-                    className='text-start hover:bg-gray-200 rounded p-3 transition'
-                    key={i}>
-                    {guest.name}
-                  </button>
-                ))}
+                {Array.isArray(fetcher.data) &&
+                  fetcher.data?.slice(0, 10).map((guest: Guest, i: number) => (
+                    <button
+                      type='button'
+                      onClick={() => {
+                        setName(guest.name)
+                        setGuest(guest)
+                        emailRef.current?.focus()
+                      }}
+                      className='text-start hover:bg-gray-200 rounded p-3 transition'
+                      key={i}>
+                      {guest.name}
+                    </button>
+                  ))}
                 <small className='block text-center text-gray-400'>
                   -- Search your name --
                 </small>
@@ -122,7 +124,8 @@ export default function Dialog() {
 
               <button
                 type='submit'
-                className='rounded rounded-tl-none rounded-bl-none px-4 font-medium bg-sage text-white'
+                disabled={isSubmitting}
+                className='rounded rounded-tl-none rounded-bl-none px-4 font-medium bg-sage text-white disabled:opacity-70'
                 aria-label='Close'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -139,6 +142,7 @@ export default function Dialog() {
                 </svg>
               </button>
             </div>
+            <small className='block text-sage'>{fetcher.data?.message}</small>
           </fetcher.Form>
 
           <ReactDialog.Close asChild>
