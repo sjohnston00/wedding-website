@@ -46,7 +46,7 @@ export const action = async ({ request }: ActionArgs) => {
 
   if (guest.length === 0) {
     return {
-      error: `Did not find a guest under the name: ${data.search}`
+      error: 'Did not find a guest under that name'
     }
   }
 

@@ -9,7 +9,7 @@ module.exports = {
       },
       colors: {
         sage: '#5e8e76',
-        'dark-sage': '#6d9a84'
+        'dark-sage': '#50846A'
       },
       animation: {
         show: 'show 1s forwards ease'
