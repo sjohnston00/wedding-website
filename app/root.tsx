@@ -1,5 +1,6 @@
 import type { LinksFunction, MetaFunction } from '@remix-run/node'
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -23,16 +24,16 @@ export const meta: MetaFunction = () => ({
   viewport: 'width=device-width,initial-scale=1'
 })
 
-export default function App() {
+function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
       <head>
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className='min-h-screen'>
         {/* <Navbar /> */}
-
+        {children}
         <Outlet />
         <ScrollRestoration />
         <Scripts />
@@ -40,5 +41,35 @@ export default function App() {
         <Footer />
       </body>
     </html>
+  )
+}
+
+export default function App() {
+  return (
+    <Layout>
+      {/* <Navbar /> */}
+
+      <Outlet />
+      <ScrollRestoration />
+      <Scripts />
+      {process.env.NODE_ENV === 'production' ? <LiveReload /> : null}
+      <Footer />
+    </Layout>
+  )
+}
+
+export function CatchBoundary() {
+  return (
+    <Layout>
+      {/* <Navbar /> */}
+      <div className='flex flex-col gap-6 min-h-screen px-4 bg-white items-center justify-center'>
+        <h1 className='tracking-widest text-sage font-bold uppercase text-2xl'>
+          404 | Not Found
+        </h1>
+        <Link className='px-8 py-2 shadow bg-sage rounded text-white' to={'/'}>
+          Go back home
+        </Link>
+      </div>
+    </Layout>
   )
 }
