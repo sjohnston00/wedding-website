@@ -6,8 +6,11 @@ module.exports = {
       ? "./server.js"
       : undefined,
   ignoredRouteFiles: ["**/.*"],
+  future: {
+    unstable_tailwind: true,
+  },
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
   // serverBuildPath: ".netlify/functions-internal/server.js",
   // publicPath: "/build/",
-};
+}

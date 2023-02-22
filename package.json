@@ -2,9 +2,11 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+    "dev": "remix dev",
+    "dev:old": "concurrently \"npm run dev:css\" \"remix dev\"",
     "start": "cross-env NODE_ENV=production netlify dev",
-    "build": "npm run build:css && remix build",
+    "build": "remix build",
+    "build:old": "npm run build:css && remix build",
     "build:css": "tailwindcss -m -i ./styles/tailwind.css -o ./app/styles/tailwind.css",
     "dev:css": "tailwindcss -w -i ./styles/tailwind.css -o ./app/styles/tailwind.css",
     "typecheck": "tsc -b"
