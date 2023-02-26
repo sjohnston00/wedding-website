@@ -16,8 +16,9 @@ export default function Dialog() {
 
   useEffect(() => {
     setTimeout(() => {
-      setOpen(!document.cookie.includes(emailSignUpKey))
-    }, 5000)
+      // setOpen(!document.cookie.includes(emailSignUpKey))
+      setOpen(true)
+    }, 1000)
     fetcher.load('/api/guests')
   }, [])
 
@@ -39,12 +40,12 @@ export default function Dialog() {
     <ReactDialog.Root open={open}>
       <ReactDialog.Portal>
         <ReactDialog.Overlay
-          className='bg-black/25 fixed inset-0'
+          className='bg-black/25 fixed inset-0 DialogOverlay'
           onClick={closeDialog}
         />
         <ReactDialog.Content
           onOpenAutoFocus={(e) => e.preventDefault()}
-          className='bg-white rounded-md shadow-md fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 p-6 focus:outline-none overflow-y-auto'
+          className='slide-down bg-white rounded-md shadow-md fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 p-6 focus:outline-none overflow-y-auto DialogContent'
           onEscapeKeyDown={closeDialog}>
           <ReactDialog.Title className='m-0 font-medium text-sage text-xl'>
             Email Sign Up
