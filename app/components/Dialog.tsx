@@ -10,8 +10,6 @@ type DialogProps = {
 }
 
 export default function Dialog({ guests }: DialogProps) {
-  console.log({ guests })
-
   const fetcher = useFetcher()
   const [open, setOpen] = useState(false)
   const [name, setName] = useState('')
