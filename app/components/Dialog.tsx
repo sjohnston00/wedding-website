@@ -61,8 +61,8 @@ export default function Dialog({ guests }: DialogProps) {
                 type='text'
                 name='search'
                 onChange={(e) => setName(e.target.value)}
+                className='autocomplete rounded rounded-tr-none rounded-br-none flex-1 border-sage border-2 focus:border-sage mb-4'
                 value={name}
-                className='rounded rounded-tr-none rounded-br-none flex-1 border-sage border-2 focus:border-sage mb-4'
                 id='search'
                 placeholder='Name...'
                 autoFocus={false}
@@ -85,8 +85,8 @@ export default function Dialog({ guests }: DialogProps) {
                 </svg>
               ) : null} */}
               <div
-                id='automcomple-box'
-                className='absolute inset-0 -translate-y-full w-full z-10 h-32 bg-white hidden transition shadow-lg rounded-tl rounded-tr flex-col gap-2 overflow-y-auto p-4'>
+                id='autocomplete-box'
+                className='absolute autocomplete inset-0 -translate-y-full w-full z-10 h-32 bg-white hidden transition shadow-lg rounded-tl rounded-tr flex-col gap-2 overflow-y-auto p-4'>
                 {filteredGuests.slice(0, 10).map((guest, i) => (
                   <button
                     type='button'

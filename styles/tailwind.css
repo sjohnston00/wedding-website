@@ -4,9 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.autocomplete:focus #automcomple-box,
-.autocomplete:focus-within #automcomple-box,
-.autocomplete:focus-visible #automcomple-box {
+.autocomplete:focus #autocomplete-box,
+.autocomplete:focus-within #autocomplete-box,
+.autocomplete:focus-visible #autocomplete-box {
   display: flex;
 }
 @keyframes slideInTop {
@@ -57,7 +57,7 @@
   }
 }
 
-.DialogOverlay[data-state='open'] {
+/* .DialogOverlay[data-state='open'] {
   animation: fadeIn 300ms ease-out;
 }
 
@@ -70,4 +70,4 @@
 
 .DialogOverlay[data-state='closed'] {
   animation: fadeOut 300ms ease-in;
-}
+} */
